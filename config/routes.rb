@@ -1,10 +1,25 @@
 Rails.application.routes.draw do
-  # HTTP GET Request for a specific product
-  get '/products/:id' => 'products#show'
 
+  # resources :products
   # HTTP GET Request for all the products
   get '/products', to: 'products#index'
 
+  # HTTP GET Request to get the FORM for creating ONE new product
+  get '/products/new', to: 'products#new'
+  # HTTP POST Request to create a product. Uses the form fields to create the product.
+  post '/products', to: 'products#create'
+
+  # HTTP GET Request to get the FORM for updating ONE EXISTING product  
+  get '/products/:id/edit', to: 'products#edit', as: 'edit_product'
+  patch '/products/:id', to: 'products#update'
+    
+  # HTTP GET Request for a specific product
+  # NOTE: the as: 'product' will generate a url helper (product_url, product_path)
+  get '/products/:id', to: 'products#show', as: 'product'
+
+  # HTTP DELETE Request 
+  delete '/products/:id', to: 'products#destroy'
+  
   # HTTP GET Request for a specific song.
   get '/songs/:id', to: 'songs#show'
   # HTTP GET Request for all the products
