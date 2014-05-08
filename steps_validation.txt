@@ -19,6 +19,7 @@ rake db:migrate
 # Update the product views to have a category
 
 
+<<<<<<< HEAD
 #############################################################
 # Validations
 #############################################################
@@ -95,5 +96,3 @@ rake db:migrate
 # - Price with a format like the product
 # - Unique ID, need to add a uuid integer attribute to the Song model. Find a good regex
 # for this unique id.
-
-
