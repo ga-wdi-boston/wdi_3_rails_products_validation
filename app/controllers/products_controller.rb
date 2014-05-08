@@ -25,10 +25,9 @@ class ProductsController < ApplicationController
 
   # POST /products
   def create
-    # @product = Product.create(params)
     @product = Product.create(product_params)
-
-    if @product.save
+    
+    if @product.valid?
       # It saved, so lets see this new product
       redirect_to @product, notice: 'You created a new product'
     else
