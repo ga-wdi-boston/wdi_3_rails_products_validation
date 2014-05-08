@@ -76,6 +76,23 @@ rake db:migrate
   validates :category, inclusion: { in: CATEGORIES }
 
 #############################################################
+# More Validations
+#############################################################
+  CATEGORIES = ['Apparel', 'Kitchen', 'Entertainment', 'Software']
+
+  # A Product name MUST be at least 3 characters.  
+  validates :name, length: { minimum: 3}
+  # A Product name MUST be unique
+  validates :name, uniqueness: true
+  # The price MUST be a number
+  validates :price, numericality: true
+  validates :price, format: { :with => /^\d+(\.\d{2})?$/ }
+
+  # A category must be one the above
+  validates :category, inclusion: { in: CATEGORIES }
+
+#############################################################
+>>>>>>> Added product validations
 # A Validations that must match a regular expression
 # See http://www.regular-expressions.info/
 #############################################################
