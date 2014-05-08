@@ -8,3 +8,10 @@ We will add validations for the Product attributes/properties.
 ### Demo
 See the steps_validation.txt file.
 
+
+## View Partials
+Lets DRY up some of our view code using partails
+### Demo
+See the steps_partials.txt file.
+
+
